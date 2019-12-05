@@ -71,8 +71,7 @@ node* find(struct node** head, int value)
 		cout<<"No entry with value "<<value<<" is found. Returning Null Pointer"<<endl;
 	}
 	cout<<"Pointer is: "<<ptr<<endl;
-	return ptr;
-	
+	return ptr;	
 }
 
 int length(struct node** head)
@@ -182,7 +181,6 @@ void print_sublist(struct node** head, int start,int end)
 	while(start>0)
 	{
 		ptr = ptr->link_node;
-		
 		start--;
 	}
 	
@@ -279,12 +277,15 @@ int main()
 					cout<<temp->data<<endl;
 					break;	
 			}
-//			case 5: {
-//			cout<<"Enter value at node: ";
-//					cin>>data;
-//					insert_after_node(prev_node, data);
-//					break;	
-//			}
+			case 5: {
+			cout<<"Enter value after which you want to add the value: ";
+					cin>>data;
+					struct node* temp = find(&head, data);
+					cout<<"Enter value at node: ";
+					cin>>data;
+					insert_after_node(temp, data);
+					break;	
+			}
 			case 6: {
 			cout<<"Enter start and end: ";
 					int start,end;
