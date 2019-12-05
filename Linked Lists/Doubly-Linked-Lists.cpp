@@ -15,7 +15,9 @@ void insert_at_beginning(struct node** head, int data)
 {
 	struct node* new_ptr = (struct node*) malloc(sizeof(struct node));
 	new_ptr->data = data;	
-	new_ptr->link_node = *head;
+	new_ptr->next = *head;
+	new_ptr->prev = NULL:
+	*head->prev = new_ptr;
 	*head = new_ptr;
 	return;
 }
