@@ -27,17 +27,18 @@ void insert_at_end(struct node** head, int data)
 	struct node* ptr = *head;
 	struct node* new_ptr = (struct node*) malloc(sizeof(struct node));
 	new_ptr->data = data;
-	new_ptr->link_node = NULL;
+	new_ptr->next = NULL;
 	if(ptr==NULL)
 	{
 		*head = new_ptr;
 		return;
 	}
-	while(ptr->link_node!=NULL)
+	while(ptr->next!=NULL)
 	{
-		ptr = ptr -> link_node;	
+		ptr = ptr -> next;	
 	}
-	ptr->link_node = new_ptr;
+	ptr->next = new_ptr;
+	new_ptr->prev = ptr; 
 	return;
 }
 
