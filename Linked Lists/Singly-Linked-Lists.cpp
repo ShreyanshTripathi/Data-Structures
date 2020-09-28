@@ -44,6 +44,7 @@ void insert_after_node(struct node* prev_node, int data)
 	{
 		cout<<"Warning! The previous node pointer is Null. This operation will give you a list with one element:data"<<endl;
 		insert_at_beginning(&prev_node,data);
+		return
 	}
 	struct node* new_ptr = (struct node*) malloc(sizeof(struct node));
 	new_ptr->data = data;
